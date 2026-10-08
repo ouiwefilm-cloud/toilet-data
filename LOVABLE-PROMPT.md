@@ -5,8 +5,8 @@
 전국 공중화장실 찾기 모바일 웹앱을 만들어줘.
 
 **데이터** (fetch로 가져와, CORS 허용됨):
-- 인덱스: https://raw.githubusercontent.com/ouiwefilm-cloud/toilet-data/main/data/index.json — 시도별 건수와 bounds
-- 시도별 데이터: https://raw.githubusercontent.com/ouiwefilm-cloud/toilet-data/main/data/{region}.json
+- 인덱스: https://cdn.jsdelivr.net/gh/ouiwefilm-cloud/toilet-data@main/data/index.json — 시도별 건수와 bounds
+- 시도별 데이터: https://cdn.jsdelivr.net/gh/ouiwefilm-cloud/toilet-data@main/data/{region}.json
   (region: seoul, busan, daegu, incheon, gwangju, daejeon, ulsan, gyeonggi, gangwon, chungbuk, chungnam, jeonbuk, jeonnam, gyeongbuk, gyeongnam, sejong, jeju, etc)
 - 각 행은 배열: [화장실명, 위도, 경도, 플래그, 개방시간문자열, 주소]
 - 플래그는 비트합: 1=24시간, 2=장애인화장실, 4=기저귀교환대, 8=어린이용, 16=CCTV, 32=비상벨

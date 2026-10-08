@@ -5,8 +5,8 @@
 ## 사용법
 
 ```
-https://raw.githubusercontent.com/ouiwefilm-cloud/toilet-data/main/data/index.json   ← 시도별 건수/경계(bounds)
-https://raw.githubusercontent.com/ouiwefilm-cloud/toilet-data/main/data/seoul.json   ← 시도별 데이터
+https://cdn.jsdelivr.net/gh/ouiwefilm-cloud/toilet-data@main/data/index.json   ← 시도별 건수/경계(bounds)
+https://cdn.jsdelivr.net/gh/ouiwefilm-cloud/toilet-data@main/data/seoul.json   ← 시도별 데이터
 ```
 
 시도 키: seoul busan daegu incheon gwangju daejeon ulsan gyeonggi gangwon chungbuk chungnam jeonbuk jeonnam gyeongbuk gyeongnam sejong jeju etc
