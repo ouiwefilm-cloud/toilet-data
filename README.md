@@ -1,6 +1,6 @@
 # 🚽 toilet-data — 전국 공중화장실 좌표 데이터 (시도별 JSON)
 
-전국 공중화장실 **42,513곳**의 이름·좌표·개방시간·주소·편의시설. 웹앱에서 `fetch`로 바로 사용 가능
+전국 공중화장실 **46,080곳**의 이름·좌표·개방시간·주소·편의시설. 웹앱에서 `fetch`로 바로 사용 가능
 (raw.githubusercontent.com·jsDelivr 모두 CORS 허용).
 
 ## 사용법
@@ -32,10 +32,13 @@ https://cdn.jsdelivr.net/gh/ouiwefilm-cloud/toilet-data@main/data/seoul.json   �
 
 - 원천: 행정안전부 **전국공중화장실표준데이터** (공공누리, data.go.kr/data/15012892), **데이터 기준일 2024-12-31**
   (CSV 53,585곳). 2026년 광주·전남 통합으로 바뀐 "전남광주통합특별시" 주소는 광주/전남 파일로 나눈다.
-- 좌표: 2025-02 이후 원천 CSV 에 좌표가 없다. 그래서 이전 판(좌표 포함 구버전 스냅샷의 공개 미러
-  daeillband2014-hub/toilet-map-korea)의 좌표를 **같은 주소**에 재사용했다. 모든 좌표는 공공데이터 출처다.
-- **빠진 곳:** 이전 판에 없던 새 화장실·주소가 바뀐 곳 약 9,500곳은 좌표가 없어 아직 빠져 있다.
-  저장이 허용되는 공공데이터(도로명주소 위치정보요약DB)로 채울 예정이다.
+- 좌표: 2025-02 이후 원천 CSV 에 좌표가 없어 두 공공데이터에서 가져온다.
+  1. **행정안전부 도로명주소 "위치정보요약DB"** (juso.go.kr, 2026-09 판)의 건물 출입구 좌표를 도로명 주소로 짝지음 → 40,682곳.
+     가장 정확한 원천이다. 예전 좌표 중 수 km 이상 틀려 있던 약 1,000곳(섬 화장실이 육지에 찍힌 것 등)도 이걸로 바로잡혔다.
+  2. 도로명으로 못 찾은 곳은 이전 판(좌표 포함 구버전 스냅샷의 공개 미러 daeillband2014-hub/toilet-map-korea)의
+     좌표를 같은 주소에 재사용 → 6,954곳.
+- **빠진 곳:** 약 5,900곳. 대부분 공식 데이터의 도로명 칸에 지번 주소만 적혀 있어 도로명 DB 로 찾을 수 없는 곳이다.
+  도로명주소 "건물DB"(지번↔도로명 대응)를 더하면 더 채울 수 있다.
 - **카카오·브이월드 지오코딩 결과는 넣지 않는다.** 두 서비스 모두 결과의 저장·재배포를 금지한다(실시간 호출만 허용).
 - 재구축 스크립트: ouiwefilm-cloud/simple-md-reader 의 `scripts/toilet-data/rebuild.py`
 - 공공데이터 원본 특성상 실제와 다를 수 있다.
@@ -44,21 +47,21 @@ https://cdn.jsdelivr.net/gh/ouiwefilm-cloud/toilet-data@main/data/seoul.json   �
 
 | 시도 | 건수 |
 |---|---|
-| busan | 2,288 |
-| chungbuk | 1,803 |
-| chungnam | 1,867 |
-| daegu | 1,653 |
-| daejeon | 1,363 |
+| busan | 2,489 |
+| chungbuk | 1,829 |
+| chungnam | 1,976 |
+| daegu | 1,667 |
+| daejeon | 1,450 |
 | etc | 0 |
-| gangwon | 3,629 |
-| gwangju | 1,092 |
-| gyeongbuk | 4,365 |
-| gyeonggi | 6,804 |
-| gyeongnam | 4,042 |
-| incheon | 2,074 |
-| jeju | 692 |
-| jeonbuk | 2,270 |
-| jeonnam | 3,272 |
-| sejong | 472 |
-| seoul | 4,085 |
-| ulsan | 742 |
+| gangwon | 3,686 |
+| gwangju | 1,173 |
+| gyeongbuk | 4,413 |
+| gyeonggi | 8,885 |
+| gyeongnam | 4,202 |
+| incheon | 2,258 |
+| jeju | 698 |
+| jeonbuk | 2,363 |
+| jeonnam | 3,553 |
+| sejong | 473 |
+| seoul | 4,214 |
+| ulsan | 751 |
